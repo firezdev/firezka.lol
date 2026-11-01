@@ -74,6 +74,7 @@ img {
     font-weight: bolder;
     font-size: 30px;
 }
+
 @keyframes name-move {
     from {
         transform: translateX(calc(-5395px + 100vw));
@@ -81,6 +82,24 @@ img {
     to {
         transform: translateX(0px);
     }
+}
+
+#footer {
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    right: 30px;
+}
+#footer div {
+    color: #999;
+}
+
+#footer-links a {
+    text-decoration: line-through;
+    color: #666;
+}
+#footer-links a:hover {
+    color: #666;
 }
 
 @media (max-width: 700px) {
