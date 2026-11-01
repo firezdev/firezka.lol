@@ -96,10 +96,7 @@ img {
 
 #footer-links a {
     text-decoration: line-through;
-    color: #666;
-}
-#footer-links a:hover {
-    color: #666;
+    color: #666 !important;
 }
 
 @media (max-width: 700px) {
