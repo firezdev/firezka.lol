@@ -8,36 +8,10 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background:
-        radial-gradient(transparent, black 65%), url("/static/images/bg.jpg"),
-        black;
-    background-size: contain;
+    background: url("/static/images/bg.jpg"), black;
+    background-size: 200%, contain;
     background-repeat: no-repeat;
-    background-position: center;
-    filter: blur(-1.5px);
-    transform: rotateX(var(--paralax-x)) rotateY(var(--paralax-y));
-    transform-style: preserve-3d;
-    transition: transform 1.5s cubic-bezier(0.05, 0.5, 0, 1);
-    will-change: transform;
-}
-
-#flashlight {
-    --flashlight-x: 50vw;
-    --flashlight-y: 50vh;
-}
-#flashlight:before {
-    z-index: 10;
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    pointer-events: none;
-    background: radial-gradient(
-        circle 15em at var(--flashlight-x) var(--flashlight-y),
-        #00000000,
-        #000000ee
-    );
+    background-position: 50%;
 }
 
 #contacts {
@@ -110,7 +84,44 @@ img {
 }
 
 @media (max-width: 700px) {
+    .contact {
+        width: 80vw;
+    }
     #landing {
         flex-direction: column;
+    }
+}
+
+@media (min-width: 700px) {
+    #flashlight {
+        --flashlight-x: 50vw;
+        --flashlight-y: 50vh;
+    }
+    #flashlight:before {
+        z-index: 10;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+        background: radial-gradient(
+            circle 15em at var(--flashlight-x) var(--flashlight-y),
+            #00000000,
+            #000000ee
+        );
+    }
+    #landing {
+        background:
+            radial-gradient(transparent, black 65%),
+            url("/static/images/bg.jpg"), black;
+        filter: blur(0.2px);
+        transform: rotateX(var(--paralax-x)) rotateY(var(--paralax-y));
+        transform-style: preserve-3d;
+        transition: transform 1.5s cubic-bezier(0.05, 0.5, 0, 1);
+        will-change: transform;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
